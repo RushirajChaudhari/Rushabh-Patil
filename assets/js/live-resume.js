@@ -1,10 +1,20 @@
 // Toggle the navigation bar visibility
-$('[data-toggle="collapsible-nav"]').on('click', function(e){
-    var target = $(this).data('target');
-    $('#' + target).toggleClass('show');
-    console.log('Toggle clicked, target:', target);
-    console.log('Navigation classes:', $('#' + target).attr('class'));
-});
+// $('[data-toggle="collapsible-nav"]').on('click', function(e){
+//     var target = $(this).data('target');
+//     $('#' + target).toggleClass('show');
+//     console.log('Toggle clicked, target:', target);
+//     console.log('Navigation classes:', $('#' + target).attr('class'));
+// });
+
+// new one 
+const navToggleBtn = document.querySelector('.btn-menu-toggle')
+const collapsibleNav = document.getElementById('collapsible-nav')
+
+navToggleBtn.addEventListener('click', () => {
+  collapsibleNav.classList.toggle('show')
+})
+
+
 
 $(document).ready(function(){
     if(window.innerWidth >= 992) {
