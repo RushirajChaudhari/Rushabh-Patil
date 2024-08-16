@@ -24,10 +24,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
-    background-color: white; /* Default light theme */
-    color: black;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-  
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav {
@@ -96,6 +95,8 @@ ul li a:hover {
 
 .section {
   /* background-color: var(--extra-light); */
+  margin-left: 18px;
+  
 }
 
 .section__container {
@@ -112,7 +113,26 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* width: 250px; */
 }
+
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+  .content {
+    /* Adjust width or any other properties as needed */
+    width: 110%;  /* Makes the content take full width of the screen */
+    padding: 0 1rem; /* Adds padding for better spacing on smaller screens */
+  }
+  .title {
+    font-size: 1.75rem; /* Adjust font size for smaller screens */
+    line-height: 2.5rem; /* Adjust line height for better spacing */
+  }
+
+  .title span {
+    white-space: nowrap; /* Prevent line break within the span */
+  }
+}
+
 
 .subtitle {
   letter-spacing: 2px;
@@ -125,8 +145,7 @@ ul li a:hover {
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 3rem;
-  /* color: var(--text-dark); */
-  color: white;
+  color: #9333ea;
   margin-bottom: 1rem;
 }
 
@@ -158,10 +177,10 @@ ul li a:hover {
   cursor: pointer;
 }
 
-
 .image {
   display: grid;
   place-items: center;
+  margin-top: -73px;
 }
 
 .image img {
@@ -169,7 +188,8 @@ ul li a:hover {
   border-radius: 100%;
 }
 
-@media (width < 750px) {
+/* Responsive Design for Small Screens */
+@media (max-width: 750px) {
   nav .checkbox {
     display: block;
   }
@@ -197,7 +217,7 @@ ul li a:hover {
   .section__container {
     padding: 10rem 1rem 5rem 1rem;
     text-align: center;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .image {
@@ -209,55 +229,86 @@ ul li a:hover {
   }
 }
 
+/* Responsive Design for Extra Small Screens */
+@media (max-width: 480px) {
+  .nav__content {
+    padding: 1rem;
+  }
+
+  nav .logo a {
+    font-size: 1.25rem;
+  }
+
+  ul {
+    gap: 2rem;
+  }
+
+  .section__container {
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+
+  .action__btns button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .image img {
+    width: min(20rem, 80%);
+  }
+}
+
 /* ANIMATED BUTTON CSS  */
 .button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-button {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    /* background-color: #f5a623; */
-    border: 2px solid var(--primary-color);
-    border-radius: 50px;
-    /* color:var(--primary-color); */
-    color:#f5a623;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  color: #f5a623;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .custom-button .button-icon {
-    background-color: #000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
 }
 
 .custom-button:hover {
-    background-color: transparent;
-    color: var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
 }
 
 .custom-button:hover .button-icon {
-    /* background-color: var(--primary-color); */
-    background-color: #f5a623;
-    color: #000;
+  background-color: #f5a623;
+  color: #000;
 }
 
-/* DARK AND LIGHT MODE 
- */
-
-
+/* DARK AND LIGHT MODE */
 .dark-mode {
   background-color: #222;
   color: #fff;
@@ -266,11 +317,11 @@ ul li a:hover {
 .button {
   float: right;
   padding: 10px 20px;
-  background-color: #d4d4d4;
+  /* border: 1px solid black; */
   color: white;
-  border: none;
   border-radius: 75px;
-  width: 9px;
+  height: 8px;
+  width: 3px;
   display: flex;
   margin: 1rem;
   align-items: center;

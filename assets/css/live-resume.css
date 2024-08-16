@@ -488,11 +488,59 @@ pre {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px; } }
 
-.row {
+/* .row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px; }
+  margin-left: -15px; } */
+  .row {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    /* max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-left: 100px;
+    display: grid;
+    grid-template-columns: 500px 500px; */
+  }
+
+  .row-new {
+    /* Base desktop styles (unchanged) */
+    max-width: 100%;
+    justify-content: center;
+    padding-left: 100px;
+    display: grid;
+    grid-template-columns: 500px 500px;
+  }
+  
+  /* For tablets and medium screens */
+  @media (max-width: 1024px) {
+    .row-new {
+      grid-template-columns: 1fr 1fr;
+      padding-left: 50px; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  /* For small screens and mobile devices */
+  @media (max-width: 768px) {
+    .row-new {
+      grid-template-columns: 1fr; /* Stack columns on top of each other */
+      padding-left: 20px; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  /* For extra small screens */
+  @media (max-width: 480px) {
+    .row-new {
+      grid-template-columns: 1fr; /* Keep the single column layout */
+      padding-left: 10px; /* Further adjust padding */
+    }
+  }
+ 
+/* ***************************************************   */
 
 .no-gutters {
   margin-right: 0;
@@ -5096,8 +5144,17 @@ button.bg-white:focus {
 .rounded-circle {
   border-radius: 50% !important; }
 
-.rounded-pill {
-  border-radius: 50rem !important; }
+  .rounded-pill {
+    width: 130px;
+    height: 25px;
+    border-radius: 50rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rounded-pill a{
+    font-size: 10px;
+  }
 
 .rounded-0 {
   border-radius: 0 !important; }
@@ -7505,7 +7562,7 @@ aside .widget {
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2); }
 
 .btn-img {
-  height: 10px;
+  height: 8px;
   margin-right: 6px; }
 
 .btn-menu-toggle {
@@ -7526,7 +7583,7 @@ aside .widget {
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2); }
 
 .btn-download-cv {
-  padding: 6px 30px; }
+  padding: 2px 10px; }
 
 .btn-hire-me {
   font-size: 8px;
@@ -7540,7 +7597,8 @@ header {
   padding-top: 16px;
   padding-bottom: 16px;
   background-color: #f3f3f3;
-  z-index: 1000; }
+  z-index: 1000;
+margin-bottom: 45px; }
 
 .collapsible-nav {
   display: flex;
@@ -7550,7 +7608,7 @@ header {
   margin-right: 10px;
   transition: width 0.6s ease-in-out; }
   .collapsible-nav.show {
-   width: 550px; }  /*navbar length  */
+   width: 700px; }  /*navbar length  */
   @media (max-width: 991px) {
     .collapsible-nav {
       position: fixed;
@@ -7728,6 +7786,9 @@ main {
         margin-bottom: 0; }
   main .services-section {
     margin-bottom: 34px; }
+    .services-section h2{
+      margin-bottom: 18px;
+    }
   main .service-card {
     padding-top: 11px;
     padding-bottom: 11px; }
@@ -7754,11 +7815,21 @@ main {
       font-weight: bold;
       line-height: 1;
       margin-bottom: 8px; }
+      .media-body {
+        margin-left: 10px;
+      }
+      .media-body h5 {
+        font-size: 25px;
+      }
     main .service-card .service-description {
       font-size: 10px;
       font-weight: 300;
       max-width: 180px;
       margin-bottom: 0; }
+      .li-size{
+        font-size: 15px;
+      }
+
   main .testimonial-section {
     background-color: #080808;
     color: #ffffff;
